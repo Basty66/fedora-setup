@@ -4,7 +4,7 @@ Copia y pega de arriba hacia abajo en la Terminal de Fedora.
 
 ## 1. Instalar todo
 
-El repo es privado: primero inicia sesión en GitHub (se abre el navegador).
+Primero inicia sesión en GitHub (se abre el navegador); así también quedan listos tus repos privados.
 
 ```bash
 sudo dnf install -y git gh
