@@ -59,11 +59,15 @@ git config --global --list             # configuración de Git
 
 ## 2. Instalación en Fedora
 
+> Todos los comandos, en orden y listos para copiar: **[COMANDOS-FEDORA.md](COMANDOS-FEDORA.md)**
+
 En una instalación limpia, abre la Terminal y ejecuta:
 
 ```bash
-sudo dnf install -y git
-git clone https://github.com/Basty66/fedora-setup.git
+sudo dnf install -y git gh
+gh auth login
+gh auth setup-git
+gh repo clone Basty66/fedora-setup
 cd fedora-setup
 chmod +x setup.sh
 ./setup.sh
@@ -87,13 +91,7 @@ chmod +x setup.sh
    docker run --rm hello-world
    ```
 
-3. **Conecta GitHub** (login en el navegador y Git usa esa sesión):
-   ```bash
-   gh auth login
-   gh auth setup-git
-   ```
-
-4. **Recupera todos tus proyectos** en `~/Proyectos`:
+3. **Recupera todos tus proyectos** en `~/Proyectos`:
    ```bash
    chmod +x clonar-proyectos.sh
    ./clonar-proyectos.sh
@@ -101,7 +99,7 @@ chmod +x setup.sh
    Luego copia los `.env` de cada proyecto desde `RESPALDO-SECRETOS.zip`. Los repos que tenían
    trabajo sin subir lo tienen en ramas `respaldo/pre-fedora` (revisa con `git branch -r`).
 
-5. **Python:** no instales paquetes globales. Cada proyecto usa su propio entorno virtual:
+4. **Python:** no instales paquetes globales. Cada proyecto usa su propio entorno virtual:
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate
@@ -142,6 +140,7 @@ asusctl -c 80   # carga máxima al 80 %, alarga la vida de la batería
 
 ```
 fedora-setup/
+├── COMANDOS-FEDORA.md       # todos los comandos para Fedora, en orden
 ├── setup.sh                 # instalador para Fedora
 ├── clonar-proyectos.sh      # clona todos mis repos en ~/Proyectos
 ├── STACK.md                 # mis librerías y dependencias habituales
