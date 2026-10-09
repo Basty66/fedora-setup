@@ -1,0 +1,9 @@
+# Paquetes globales de npm (npm ls -g --depth=0)
+@railway/cli
+md-to-pdf
+neon
+opencode-ai
+supabase
+tailwindcss
+vercel
+web-push

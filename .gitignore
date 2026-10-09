@@ -1,0 +1,36 @@
+# ─── Secretos: NUNCA deben llegar a GitHub ───────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.kdbx
+id_rsa*
+id_ed25519*
+id_ecdsa*
+credentials.json
+secretos/
+.ssh/
+.aws/
+.kube/
+
+# ─── Respaldos y logs ────────────────────────────────────────
+setup-*.log
+*.log
+respaldo*/
+*.bak
+
+# ─── Temporales del sistema y editores ───────────────────────
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+*~
+*.swp
+*.tmp
+.vscode/
+.idea/

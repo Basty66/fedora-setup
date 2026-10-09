@@ -1,0 +1,7 @@
+# Los scripts de Linux deben guardarse con saltos de línea LF,
+# si no, en Fedora fallan con "/usr/bin/env: 'bash\r': No such file or directory"
+* text=auto
+*.sh  text eol=lf
+*.txt text eol=lf
+*.md  text eol=lf
+*.ps1 text eol=crlf

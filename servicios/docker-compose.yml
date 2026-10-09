@@ -1,0 +1,29 @@
+# Bases de datos y servicios que usan mis proyectos, solo para desarrollo local.
+# Uso:  docker compose -f servicios/docker-compose.yml up -d mysql
+# Los puertos solo se abren en 127.0.0.1 (no quedan expuestos a la red).
+
+services:
+  mysql:
+    image: mysql:8.4
+    ports: ["127.0.0.1:3306:3306"]
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
+    volumes: [mysql:/var/lib/mysql]
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:17
+    ports: ["127.0.0.1:5432:5432"]
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    volumes: [postgres:/var/lib/postgresql/data]
+    restart: unless-stopped
+
+  rabbitmq:
+    image: rabbitmq:4-management
+    ports: ["127.0.0.1:5672:5672", "127.0.0.1:15672:15672"]
+    restart: unless-stopped
+
+volumes:
+  mysql:
+  postgres:
